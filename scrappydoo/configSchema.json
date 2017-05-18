@@ -1,0 +1,35 @@
+{
+    "type": "object",
+    "properties": {
+        "scrappies": {
+            "type": "array",
+            "required": "true",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "required": "true"
+                    },
+                    "collectorParams": {
+                        "type": "object",
+                        "required": "true",
+                        "properties": {
+                            "repeat": {
+                                "type": "boolean",
+                                "required": "true"
+                            },
+                            "interval": {
+                                "type": "number",
+                                "minimum": 0
+                            }
+                        }
+                    },
+                    "parserParams": {
+                        "type": "object"
+                    }
+                }
+            }
+        }
+    }
+}
