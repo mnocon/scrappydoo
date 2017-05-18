@@ -1,0 +1,26 @@
+{
+    "type": "object",
+    "properties": {
+        "collectors": {
+            "type": "array",
+            "required": "true",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "required": "true"
+                    },
+                    "repeat": {
+                        "type": "boolean",
+                        "required": "true"
+                    },
+                    "interval": {
+                        "type": "number",
+                        "minimum": 0
+                    }
+                }
+            }
+        }
+    }
+}

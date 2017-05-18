@@ -1,28 +1,24 @@
 {
-    "scrappies":
-    [
+    "scrappies": [
         {
-            "name": "test1",
-            "collectorParams":
-            {
+            "collectorParams": {
+                "name": "collector1",
                 "repeat": false,
                 "interval": 1
             },
-            "parserParams":
-            {
-                
+            "parserParams": {
+                "name": "parser1"
             }
         },
-                {
-            "name": "test2",
-            "collectorParams":
-            {
+        {
+            "collectorParams": {
+                "name": "collector2",
                 "repeat": true,
                 "interval": 10
             },
-            "parserParams":
-            {
-                
+            "parserParams": {
+                "name": "parser2"
             }
-        }]
+        }
+    ]
 }

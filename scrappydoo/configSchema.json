@@ -7,14 +7,18 @@
             "items": {
                 "type": "object",
                 "properties": {
-                    "name": {
-                        "type": "string",
-                        "required": "true"
-                    },
                     "collectorParams": {
                         "type": "object",
-                        "required": "true",
+                        "required": "false",
                         "properties": {
+                            "name": {
+                                "type": "string",
+                                "required": "true"
+                            },
+                            "overwrite":
+                            {
+                                "required": "true"
+                            },
                             "repeat": {
                                 "type": "boolean",
                                 "required": "true"
@@ -26,7 +30,14 @@
                         }
                     },
                     "parserParams": {
-                        "type": "object"
+                        "type": "object",
+                        "required": "true",
+                        "properties": {
+                            "name": {
+                                "type": "string",
+                                "required": "true"
+                            }
+                        }
                     }
                 }
             }

@@ -1,26 +1,17 @@
-"""
-Created on 29 July 2012
-@author: Lisa Simpson
-"""
-
 from threading import Event
 import config_parser
-from UrlCollector import UrlCollector
+from url_collector import UrlCollector
+
+COLLECTORS_FILE = """.\\scrappydoo\\collectors.json"""
+COLLECTORS_SCHEMA_FILE = """.\\scrappydoo\\collectorsSchema.json"""
+
+def main():
+    stop_flags = dict()
+    for collector in config_parser.parse_collectors(COLLECTORS_FILE, COLLECTORS_SCHEMA_FILE):
+        stop_flag = Event()
+        stop_flags[collector.name] = stop_flag
+        thread = UrlCollector(stop_flag, collector)
+        thread.start()
 
 if __name__ == "__main__":
     main()
-
-def main():
-    """
-    >>> my_function(2, 3)
-    6
-    >>> my_function('a', 3)
-    'aaa'
-    """
-    scrappers = ConfigParser.parse_config()
-    stop_flags = dict()
-    for scrapper in scrappers:
-        stop_flag = Event()
-        stop_flags[scrapper.name] = stop_flag
-        thread = UrlCollector(stop_flag, scrapper)
-        thread.start()

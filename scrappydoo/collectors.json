@@ -1,0 +1,16 @@
+{
+    "collectors": [
+        {
+            "name": "collector1",
+            "overwrite": true,
+            "repeat": false,
+            "interval": 1
+        },
+        {
+            "name": "collector2",
+            "overwrite": false,
+            "repeat": true,
+            "interval": 10
+        }
+    ]
+}
